@@ -1,11 +1,14 @@
 package com.ehterami.vellum.ui
 
+import android.content.Intent
+import android.provider.CalendarContract
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.AccessTime
+import androidx.compose.material.icons.filled.CalendarMonth
 import androidx.compose.material.icons.filled.Check
 import androidx.compose.material.icons.filled.Description
 import androidx.compose.material.icons.filled.Edit
@@ -17,6 +20,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -43,6 +47,7 @@ fun TaskDetailScreen(
 
     var showDatePicker by remember { mutableStateOf(false) }
     var showTimePicker by remember { mutableStateOf(false) }
+    val context = LocalContext.current
 
     LaunchedEffect(taskId) {
         if (taskId != null && !isLoaded) {
@@ -268,6 +273,30 @@ fun TaskDetailScreen(
                         title = { Text("Select Time") },
                         text = { TimePicker(state = timePickerState) }
                     )
+                }
+                
+                if (dueDate != null) {
+                    Button(
+                        onClick = {
+                            val intent = Intent(Intent.ACTION_INSERT)
+                                .setData(CalendarContract.Events.CONTENT_URI)
+                                .putExtra(CalendarContract.Events.TITLE, title)
+                                .putExtra(CalendarContract.Events.DESCRIPTION, description)
+                                .putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME, dueDate)
+                                .putExtra(CalendarContract.EXTRA_EVENT_END_TIME, dueDate!! + 3600000) // Default 1 hour
+                            context.startActivity(intent)
+                        },
+                        modifier = Modifier.fillMaxWidth(),
+                        shape = RoundedCornerShape(20.dp),
+                        colors = ButtonDefaults.buttonColors(
+                            containerColor = MaterialTheme.colorScheme.secondaryContainer,
+                            contentColor = MaterialTheme.colorScheme.onSecondaryContainer
+                        )
+                    ) {
+                        Icon(Icons.Default.CalendarMonth, contentDescription = null)
+                        Spacer(Modifier.width(8.dp))
+                        Text("Add to Google Calendar")
+                    }
                 }
                 
                 // Optional: A little hint or branding at the bottom
