@@ -12,6 +12,9 @@ import com.ehterami.vellum.ui.TaskViewModel
 import com.ehterami.vellum.ui.TaskViewModelFactory
 import com.ehterami.vellum.ui.VellumApp
 import com.ehterami.vellum.ui.theme.VellumTheme
+import java.time.ZonedDateTime
+import java.time.format.DateTimeFormatter
+import java.time.format.DateTimeParseException
 
 class MainActivity : ComponentActivity() {
 
@@ -41,8 +44,22 @@ class MainActivity : ComponentActivity() {
         if (intent?.action == Intent.ACTION_VIEW) {
             val name = intent.getStringExtra("name")
             val description = intent.getStringExtra("description") ?: ""
+            val dueDateStr = intent.getStringExtra("dueDate")
+            var dueDate: Long? = null
+
+            if (!dueDateStr.isNullOrBlank()) {
+                dueDate = try {
+                    // Try parsing common ISO formats from Assistant
+                    ZonedDateTime.parse(dueDateStr, DateTimeFormatter.ISO_DATE_TIME)
+                        .toInstant()
+                        .toEpochMilli()
+                } catch (e: DateTimeParseException) {
+                    null
+                }
+            }
+
             if (!name.isNullOrBlank()) {
-                viewModel.addTask(name, description)
+                viewModel.addTask(name, description, dueDate)
             }
         }
     }

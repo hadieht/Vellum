@@ -12,6 +12,9 @@
             <parameter
                 android:name="todoItem.description"
                 android:key="description"/>
+            <parameter
+                android:name="todoItem.temporalItem"
+                android:key="dueDate"/>
         </intent>
     </capability>
 </shortcuts>

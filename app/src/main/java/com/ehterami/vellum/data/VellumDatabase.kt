@@ -5,7 +5,7 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 
-@Database(entities = [Task::class], version = 1, exportSchema = false)
+@Database(entities = [Task::class], version = 2, exportSchema = false)
 abstract class VellumDatabase : RoomDatabase() {
     abstract fun taskDao(): TaskDao
 
@@ -19,7 +19,9 @@ abstract class VellumDatabase : RoomDatabase() {
                     context.applicationContext,
                     VellumDatabase::class.java,
                     "vellum_database"
-                ).build()
+                )
+                .fallbackToDestructiveMigration()
+                .build()
                 INSTANCE = instance
                 instance
             }
