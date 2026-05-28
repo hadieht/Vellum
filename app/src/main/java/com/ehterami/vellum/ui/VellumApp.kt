@@ -45,6 +45,9 @@ fun VellumApp(
                     },
                     onAddTaskClick = {
                         backStack.add(Destination.TaskDetail())
+                    },
+                    onPrivacyPolicyClick = {
+                        backStack.add(Destination.PrivacyPolicy)
                     }
                 )
             }
@@ -54,6 +57,13 @@ fun VellumApp(
                 TaskDetailScreen(
                     viewModel = viewModel,
                     taskId = destination.taskId,
+                    onBack = { backStack.removeLastOrNull() }
+                )
+            }
+            entry<Destination.PrivacyPolicy>(
+                metadata = ListDetailSceneStrategy.detailPane()
+            ) {
+                PrivacyPolicyScreen(
                     onBack = { backStack.removeLastOrNull() }
                 )
             }

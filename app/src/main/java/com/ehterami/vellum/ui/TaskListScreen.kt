@@ -9,6 +9,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.CheckCircle
+import androidx.compose.material.icons.filled.PrivacyTip
 import androidx.compose.material.icons.outlined.Circle
 import androidx.compose.material.icons.outlined.Delete
 import androidx.compose.material.icons.outlined.Schedule
@@ -36,6 +37,7 @@ fun TaskListScreen(
     viewModel: TaskViewModel,
     onTaskClick: (Task) -> Unit,
     onAddTaskClick: () -> Unit,
+    onPrivacyPolicyClick: () -> Unit,
     modifier: Modifier = Modifier
 ) {
     val tasks by viewModel.tasks.collectAsState()
@@ -53,6 +55,15 @@ fun TaskListScreen(
                         )
                         Spacer(Modifier.width(12.dp))
                         Text("Vellum")
+                    }
+                },
+                actions = {
+                    IconButton(onClick = onPrivacyPolicyClick) {
+                        Icon(
+                            imageVector = Icons.Default.PrivacyTip,
+                            contentDescription = "Privacy Policy",
+                            tint = MaterialTheme.colorScheme.onSurfaceVariant
+                        )
                     }
                 }
             )
