@@ -4,8 +4,8 @@
     <capability android:name="actions.intent.CREATE_TODO_ITEM">
         <intent
             android:action="android.intent.action.VIEW"
-            android:targetPackage="com.ehterami.vellum"
-            android:targetClass="com.ehterami.vellum.MainActivity">
+            android:targetPackage="com.ehterami.Koda"
+            android:targetClass="com.ehterami.Koda.MainActivity">
             <parameter
                 android:name="todoItem.name"
                 android:key="name"/>
@@ -18,17 +18,17 @@
         </intent>
         <!-- Adding query patterns helps Gemini map your app's name to the action -->
         <query-patterns>
-            <query-pattern>add $name to vellum</query-pattern>
-            <query-pattern>remind me to $name in vellum</query-pattern>
-            <query-pattern>create a task $name in vellum</query-pattern>
+            <query-pattern>add $name to Koda</query-pattern>
+            <query-pattern>remind me to $name in Koda</query-pattern>
+            <query-pattern>create a task $name in Koda</query-pattern>
         </query-patterns>
     </capability>
 
     <capability android:name="actions.intent.GET_TODO_ITEM">
         <intent
             android:action="android.intent.action.VIEW"
-            android:targetPackage="com.ehterami.vellum"
-            android:targetClass="com.ehterami.vellum.MainActivity">
+            android:targetPackage="com.ehterami.Koda"
+            android:targetClass="com.ehterami.Koda.MainActivity">
             <!-- 'q' is a common key for search queries from Assistant -->
             <parameter
                 android:name="todoItem.name"

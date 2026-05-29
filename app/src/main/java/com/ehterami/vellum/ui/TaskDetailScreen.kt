@@ -1,4 +1,4 @@
-package com.ehterami.vellum.ui
+package com.ehterami.Koda.ui
 
 import android.content.Intent
 import android.provider.CalendarContract
@@ -24,7 +24,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.ehterami.vellum.data.Task
+import com.ehterami.Koda.data.Task
 import java.time.Instant
 import java.time.LocalDateTime
 import java.time.ZoneId
@@ -301,7 +301,7 @@ fun TaskDetailScreen(
                 
                 // Optional: A little hint or branding at the bottom
                 Text(
-                    text = "Vellum helps you stay organized",
+                    text = "Koda helps you stay organized",
                     style = MaterialTheme.typography.bodySmall,
                     color = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.5f)
                 )

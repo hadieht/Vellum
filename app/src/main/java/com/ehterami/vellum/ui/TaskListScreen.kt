@@ -1,4 +1,4 @@
-package com.ehterami.vellum.ui
+package com.ehterami.Koda.ui
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -24,8 +24,8 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import com.ehterami.vellum.R
-import com.ehterami.vellum.data.Task
+import com.ehterami.Koda.R
+import com.ehterami.Koda.data.Task
 import java.time.Instant
 import java.time.LocalDateTime
 import java.time.ZoneId
@@ -54,7 +54,7 @@ fun TaskListScreen(
                             tint = MaterialTheme.colorScheme.primary
                         )
                         Spacer(Modifier.width(12.dp))
-                        Text("Vellum")
+                        Text("Koda")
                     }
                 },
                 actions = {

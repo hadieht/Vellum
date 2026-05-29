@@ -6,11 +6,11 @@ plugins {
 }
 
 android {
-    namespace = "com.ehterami.vellum"
+    namespace = "com.ehterami.Koda"
     compileSdk = 37
 
     defaultConfig {
-        applicationId = "com.ehterami.vellum"
+        applicationId = "com.ehterami.Koda"
         minSdk = 30
         targetSdk = 37
         versionCode = 2

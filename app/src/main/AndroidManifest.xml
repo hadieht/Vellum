@@ -13,18 +13,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:appCategory="productivity"
-        android:theme="@style/Theme.Vellum">
+        android:theme="@style/Theme.Koda">
         <activity
             android:name=".MainActivity"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme.Vellum">
+            android:theme="@style/Theme.Koda">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
 
-            <!-- Allows Vellum to show up in the "Share" menu for text/tasks -->
+            <!-- Allows Koda to show up in the "Share" menu for text/tasks -->
             <intent-filter>
                 <action android:name="android.intent.action.SEND" />
                 <category android:name="android.intent.category.DEFAULT" />

@@ -1,4 +1,4 @@
-package com.ehterami.vellum
+package com.ehterami.Koda
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,19 +6,19 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
-import com.ehterami.vellum.data.TaskRepository
-import com.ehterami.vellum.data.VellumDatabase
-import com.ehterami.vellum.ui.TaskViewModel
-import com.ehterami.vellum.ui.TaskViewModelFactory
-import com.ehterami.vellum.ui.VellumApp
-import com.ehterami.vellum.ui.theme.VellumTheme
+import com.ehterami.Koda.data.TaskRepository
+import com.ehterami.Koda.data.KodaDatabase
+import com.ehterami.Koda.ui.TaskViewModel
+import com.ehterami.Koda.ui.TaskViewModelFactory
+import com.ehterami.Koda.ui.KodaApp
+import com.ehterami.Koda.ui.theme.KodaTheme
 import java.time.ZonedDateTime
 import java.time.format.DateTimeFormatter
 import java.time.format.DateTimeParseException
 
 class MainActivity : ComponentActivity() {
 
-    private val database by lazy { VellumDatabase.getDatabase(this) }
+    private val database by lazy { KodaDatabase.getDatabase(this) }
     private val repository by lazy { TaskRepository(database.taskDao()) }
     private val viewModel: TaskViewModel by viewModels {
         TaskViewModelFactory(repository)
@@ -29,8 +29,8 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         handleIntent(intent)
         setContent {
-            VellumTheme {
-                VellumApp(viewModel = viewModel)
+            KodaTheme {
+                KodaApp(viewModel = viewModel)
             }
         }
     }

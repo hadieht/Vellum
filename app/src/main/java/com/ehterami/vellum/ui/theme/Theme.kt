@@ -1,4 +1,4 @@
-package com.ehterami.vellum.ui.theme
+package com.ehterami.Koda.ui.theme
 
 import android.app.Activity
 import android.os.Build
@@ -68,7 +68,7 @@ private val DarkColorScheme = darkColorScheme(
 )
 
 @Composable
-fun VellumTheme(
+fun KodaTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     // Dynamic color is available on Android 12+
     dynamicColor: Boolean = true,

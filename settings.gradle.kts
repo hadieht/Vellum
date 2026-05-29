@@ -22,6 +22,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Vellum"
+rootProject.name = "Koda"
 include(":app")
  

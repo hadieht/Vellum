@@ -1,4 +1,4 @@
-package com.ehterami.vellum.data
+package com.ehterami.Koda.data
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

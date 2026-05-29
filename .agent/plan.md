@@ -1,17 +1,17 @@
 # Project Plan
 
-Vellum To-Do List App with Adaptive UI and Google Assistant integration.
+Koda To-Do List App with Adaptive UI and Google Assistant integration.
 
 ## Project Brief
 
-# Project Brief: Vellum
+# Project Brief: Koda
 
-Vellum is a modern, high-performance To-Do List application designed for the Android ecosystem. It focuses on seamless productivity across all form factors, from compact smartphones to expansive tablets and foldables, while leveraging voice interaction for a hands-free experience.
+Koda is a modern, high-performance To-Do List application designed for the Android ecosystem. It focuses on seamless productivity across all form factors, from compact smartphones to expansive tablets and foldables, while leveraging voice interaction for a hands-free experience.
 
 ### Features
 1.  **Core Task Management**: Effortlessly add, check off, and delete tasks with a clean and intuitive interface.
 2.  **Adaptive List-Detail Layout**: A responsive 2-pane layout that automatically optimizes for large screens (tablets/foldables) by showing the task list and editor side-by-side, while providing a streamlined single-pane experience on phones.
-3.  **Voice-Activated Productivity**: Integration with Google Assistant App Actions, enabling users to add tasks using "Hey Google" voice commands (e.g., "Add new task to Vellum").
+3.  **Voice-Activated Productivity**: Integration with Google Assistant App Actions, enabling users to add tasks using "Hey Google" voice commands (e.g., "Add new task to Koda").
 4.  **Material 3 Aesthetic**: A vibrant, energetic design utilizing Material 3 components, dynamic color schemes, and full edge-to-edge display support.
 
 ### High-Level Tech Stack
@@ -60,7 +60,7 @@ Vellum is a modern, high-performance To-Do List application designed for the And
 - **Acceptance Criteria:**
   - Vibrant Material 3 light and dark themes implemented
   - Edge-to-edge display enabled
-  - Adaptive app icon matching the 'Vellum' theme created
+  - Adaptive app icon matching the 'Koda' theme created
   - App visual aesthetic matches Material 3 guidelines
 - **Duration:** 3m 35s
 

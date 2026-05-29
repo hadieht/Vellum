@@ -1,8 +1,8 @@
-package com.ehterami.vellum.ui
+package com.ehterami.Koda.ui
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.ehterami.vellum.data.TaskRepository
+import com.ehterami.Koda.data.TaskRepository
 
 class TaskViewModelFactory(private val repository: TaskRepository) : ViewModelProvider.Factory {
     override fun <T : ViewModel> create(modelClass: Class<T>): T {

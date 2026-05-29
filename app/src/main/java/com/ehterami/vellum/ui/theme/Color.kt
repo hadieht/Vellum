@@ -1,8 +1,8 @@
-package com.ehterami.vellum.ui.theme
+package com.ehterami.Koda.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
-// Vibrant Material 3 Palette for Vellum
+// Vibrant Material 3 Palette for Koda
 
 // Light Tones
 val md_theme_light_primary = Color(0xFF006C4C)

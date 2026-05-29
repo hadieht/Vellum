@@ -1,1 +1,1 @@
-adb shell am start -n com.ehterami.vellum/.MainActivity -a android.intent.action.VIEW --es "name" 'Buy groceries' --es "description" 'Milk and Eggs'
+adb shell am start -n com.ehterami.Koda/.MainActivity -a android.intent.action.VIEW --es "name" 'Buy groceries' --es "description" 'Milk and Eggs'

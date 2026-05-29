@@ -1,4 +1,4 @@
-package com.ehterami.vellum.data
+package com.ehterami.Koda.data
 
 import android.content.Context
 import androidx.room.Database
@@ -6,19 +6,19 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 
 @Database(entities = [Task::class], version = 2, exportSchema = false)
-abstract class VellumDatabase : RoomDatabase() {
+abstract class KodaDatabase : RoomDatabase() {
     abstract fun taskDao(): TaskDao
 
     companion object {
         @Volatile
-        private var INSTANCE: VellumDatabase? = null
+        private var INSTANCE: KodaDatabase? = null
 
-        fun getDatabase(context: Context): VellumDatabase {
+        fun getDatabase(context: Context): KodaDatabase {
             return INSTANCE ?: synchronized(this) {
                 val instance = Room.databaseBuilder(
                     context.applicationContext,
-                    VellumDatabase::class.java,
-                    "vellum_database"
+                    KodaDatabase::class.java,
+                    "Koda_database"
                 )
                 .fallbackToDestructiveMigration()
                 .build()

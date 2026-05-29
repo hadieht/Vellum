@@ -1,4 +1,4 @@
-package com.ehterami.vellum.ui
+package com.ehterami.Koda.ui
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
@@ -45,7 +45,7 @@ fun PrivacyPolicyScreen(
             }
             item {
                 Text(
-                    "This privacy policy applies to the Vellum app (herein referred to as \"Application\") for mobile devices that was created by (Your Name/Company) as a Free service."
+                    "This privacy policy applies to the Koda app (herein referred to as \"Application\") for mobile devices that was created by (Your Name/Company) as a Free service."
                 )
             }
             item {

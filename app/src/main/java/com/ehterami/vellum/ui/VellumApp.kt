@@ -1,4 +1,4 @@
-package com.ehterami.vellum.ui
+package com.ehterami.Koda.ui
 
 import androidx.compose.material3.adaptive.ExperimentalMaterial3AdaptiveApi
 import androidx.compose.material3.adaptive.currentWindowAdaptiveInfo
@@ -16,7 +16,7 @@ import androidx.navigation3.ui.NavDisplay
 
 @OptIn(ExperimentalMaterial3AdaptiveApi::class)
 @Composable
-fun VellumApp(
+fun KodaApp(
     viewModel: TaskViewModel,
     modifier: Modifier = Modifier
 ) {
