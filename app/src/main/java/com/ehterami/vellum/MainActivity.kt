@@ -41,28 +41,40 @@ class MainActivity : ComponentActivity() {
     }
 
     private fun handleIntent(intent: Intent?) {
-        if (intent?.action == Intent.ACTION_VIEW) {
-            val name = intent.getStringExtra("name")
-            val query = intent.getStringExtra("q")
-            val description = intent.getStringExtra("description") ?: ""
-            val dueDateStr = intent.getStringExtra("dueDate")
-            var dueDate: Long? = null
+        when (intent?.action) {
+            Intent.ACTION_VIEW -> {
+                val name = intent.getStringExtra("name")
+                val description = intent.getStringExtra("description") ?: ""
+                val dueDateStr = intent.getStringExtra("dueDate")
+                var dueDate: Long? = null
 
-            if (!dueDateStr.isNullOrBlank()) {
-                dueDate = try {
-                    ZonedDateTime.parse(dueDateStr, DateTimeFormatter.ISO_DATE_TIME)
-                        .toInstant()
-                        .toEpochMilli()
-                } catch (e: DateTimeParseException) {
-                    null
+                if (!dueDateStr.isNullOrBlank()) {
+                    dueDate = try {
+                        ZonedDateTime.parse(dueDateStr, DateTimeFormatter.ISO_DATE_TIME)
+                            .toInstant()
+                            .toEpochMilli()
+                    } catch (e: DateTimeParseException) {
+                        null
+                    }
+                }
+
+                if (!name.isNullOrBlank()) {
+                    viewModel.addTask(name, description, dueDate)
                 }
             }
-
-            if (!name.isNullOrBlank()) {
-                viewModel.addTask(name, description, dueDate)
-            } else if (!query.isNullOrBlank()) {
-                // You could implement a search/filter logic here in the future
-                // For now, it just opens the app to the task list
+            Intent.ACTION_SEND -> {
+                if ("text/plain" == intent.type) {
+                    val sharedText = intent.getStringExtra(Intent.EXTRA_TEXT)
+                    if (!sharedText.isNullOrBlank()) {
+                        viewModel.addTask(sharedText)
+                    }
+                }
+            }
+            "com.google.android.gms.actions.CREATE_NOTE" -> {
+                val text = intent.getStringExtra(Intent.EXTRA_TEXT)
+                if (!text.isNullOrBlank()) {
+                    viewModel.addTask(text)
+                }
             }
         }
     }
