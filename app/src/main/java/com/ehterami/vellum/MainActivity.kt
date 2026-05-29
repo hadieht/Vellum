@@ -43,13 +43,13 @@ class MainActivity : ComponentActivity() {
     private fun handleIntent(intent: Intent?) {
         if (intent?.action == Intent.ACTION_VIEW) {
             val name = intent.getStringExtra("name")
+            val query = intent.getStringExtra("q")
             val description = intent.getStringExtra("description") ?: ""
             val dueDateStr = intent.getStringExtra("dueDate")
             var dueDate: Long? = null
 
             if (!dueDateStr.isNullOrBlank()) {
                 dueDate = try {
-                    // Try parsing common ISO formats from Assistant
                     ZonedDateTime.parse(dueDateStr, DateTimeFormatter.ISO_DATE_TIME)
                         .toInstant()
                         .toEpochMilli()
@@ -60,6 +60,9 @@ class MainActivity : ComponentActivity() {
 
             if (!name.isNullOrBlank()) {
                 viewModel.addTask(name, description, dueDate)
+            } else if (!query.isNullOrBlank()) {
+                // You could implement a search/filter logic here in the future
+                // For now, it just opens the app to the task list
             }
         }
     }

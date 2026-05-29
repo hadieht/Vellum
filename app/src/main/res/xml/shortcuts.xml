@@ -16,5 +16,23 @@
                 android:name="todoItem.temporalItem"
                 android:key="dueDate"/>
         </intent>
+        <!-- Adding query patterns helps Gemini map your app's name to the action -->
+        <query-patterns>
+            <query-pattern>add $name to vellum</query-pattern>
+            <query-pattern>remind me to $name in vellum</query-pattern>
+            <query-pattern>create a task $name in vellum</query-pattern>
+        </query-patterns>
+    </capability>
+
+    <capability android:name="actions.intent.GET_TODO_ITEM">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetPackage="com.ehterami.vellum"
+            android:targetClass="com.ehterami.vellum.MainActivity">
+            <!-- 'q' is a common key for search queries from Assistant -->
+            <parameter
+                android:name="todoItem.name"
+                android:key="q"/>
+        </intent>
     </capability>
 </shortcuts>
