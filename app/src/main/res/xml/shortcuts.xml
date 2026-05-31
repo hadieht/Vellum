@@ -4,8 +4,8 @@
     <capability android:name="actions.intent.CREATE_TODO_ITEM">
         <intent
             android:action="android.intent.action.VIEW"
-            android:targetPackage="com.ehterami.Koda"
-            android:targetClass="com.ehterami.Koda.MainActivity">
+            android:targetPackage="com.ehterami.vellum"
+            android:targetClass="com.ehterami.vellum.MainActivity">
             <parameter
                 android:name="todoItem.name"
                 android:key="name"/>
@@ -27,8 +27,8 @@
     <capability android:name="actions.intent.GET_TODO_ITEM">
         <intent
             android:action="android.intent.action.VIEW"
-            android:targetPackage="com.ehterami.Koda"
-            android:targetClass="com.ehterami.Koda.MainActivity">
+            android:targetPackage="com.ehterami.vellum"
+            android:targetClass="com.ehterami.vellum.MainActivity">
             <!-- 'q' is a common key for search queries from Assistant -->
             <parameter
                 android:name="todoItem.name"
