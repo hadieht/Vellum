@@ -4,11 +4,14 @@
     android:height="24dp"
     android:viewportWidth="24"
     android:viewportHeight="24">
+    <!-- Modern Stylized 'K' for Koda in Primary Color -->
     <path
-        android:fillColor="#FF000000"
-        android:pathData="M6,7 L12,19 L18,7 L15,7 L12,13 L9,7 Z" />
+        android:fillColor="#5D3FD3"
+        android:pathData="M5,4 H9 V20 H5 Z" />
     <path
-        android:fillColor="#FF000000"
-        android:fillAlpha="0.2"
-        android:pathData="M12,19 L18,7 L15,7 L12,13 Z" />
+        android:fillColor="#5D3FD3"
+        android:pathData="M9,12 L18,3 H22 L11,14 Z" />
+    <path
+        android:fillColor="#5D3FD3"
+        android:pathData="M11,10 L22,21 H18 L9,12 Z" />
 </vector>
