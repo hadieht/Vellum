@@ -16,11 +16,13 @@
                 android:name="todoItem.temporalItem"
                 android:key="dueDate"/>
         </intent>
-        <!-- Adding query patterns helps Gemini map your app's name to the action -->
+        <!-- Adding query patterns helps Assistant map your app's name to the action -->
         <query-patterns>
             <query-pattern>add $name to Koda</query-pattern>
             <query-pattern>remind me to $name in Koda</query-pattern>
             <query-pattern>create a task $name in Koda</query-pattern>
+            <query-pattern>new note $name in Koda</query-pattern>
+            <query-pattern>Koda add $name</query-pattern>
         </query-patterns>
     </capability>
 
@@ -34,5 +36,11 @@
                 android:name="todoItem.name"
                 android:key="q"/>
         </intent>
+        <query-patterns>
+            <query-pattern>find $q in Koda</query-pattern>
+            <query-pattern>search for $q on Koda</query-pattern>
+            <query-pattern>show my tasks on Koda</query-pattern>
+            <query-pattern>open Koda and find $q</query-pattern>
+        </query-patterns>
     </capability>
 </shortcuts>
