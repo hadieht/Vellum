@@ -1,19 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<shortcuts xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
-    <capability android:name="actions.intent.CREATE_TODO_ITEM">
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+    <capability android:name="actions.intent.CREATE_TASK">
         <intent
             android:action="android.intent.action.VIEW"
             android:targetPackage="com.ehterami.vellum"
             android:targetClass="com.ehterami.vellum.MainActivity">
             <parameter
-                android:name="todoItem.name"
+                android:name="task.name"
                 android:key="name"/>
             <parameter
-                android:name="todoItem.description"
+                android:name="task.note"
                 android:key="description"/>
             <parameter
-                android:name="todoItem.temporalItem"
+                android:name="task.dueDate"
                 android:key="dueDate"/>
         </intent>
         <!-- Adding query patterns helps Assistant map your app's name to the action -->
@@ -26,14 +25,14 @@
         </query-patterns>
     </capability>
 
-    <capability android:name="actions.intent.GET_TODO_ITEM">
+    <capability android:name="actions.intent.GET_THING">
         <intent
             android:action="android.intent.action.VIEW"
             android:targetPackage="com.ehterami.vellum"
             android:targetClass="com.ehterami.vellum.MainActivity">
             <!-- 'q' is a common key for search queries from Assistant -->
             <parameter
-                android:name="todoItem.name"
+                android:name="thing.name"
                 android:key="q"/>
         </intent>
         <query-patterns>

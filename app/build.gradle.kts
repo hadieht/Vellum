@@ -13,8 +13,8 @@ android {
         applicationId = "com.ehterami.vellum"
         minSdk = 30
         targetSdk = 37
-        versionCode = 5
-        versionName = "2.2"
+        versionCode = 6
+        versionName = "2.3"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -27,6 +27,9 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            ndk {
+                debugSymbolLevel = "FULL"
+            }
         }
     }
     compileOptions {
